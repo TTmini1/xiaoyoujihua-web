@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>小有计划 - 计划记下来，走到哪都同步</title>
+<meta name="description" content="小有计划是一个轻巧的待办与计划工具：网页上写好的计划，打开手机就能接着做。" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23E0764A'/%3E%3Cpath d='M9.5 16.5L14 21L22.5 11.5' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html">
+      <svg width="32" height="32" viewBox="0 0 32 32"><rect width="32" height="32" rx="9" fill="#E0764A"/><path d="M9.5 16.5L14 21L22.5 11.5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>小有计划</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#features">功能亮点</a>
+      <a href="#sync">手机同步</a>
+      <a href="#voice">用户心声</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="app.html">免费开始</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <span class="badge"><span class="badge-dot"></span>网页版 · 手机端 实时同步</span>
+      <h1>计划记下来，<br />走到哪都同步</h1>
+      <p class="sub">小有计划是一个轻巧的待办与计划工具：网页上写好的计划，打开手机就能接着做。没有复杂设置，只有干净清爽的清单。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="app.html">免费开始使用</a>
+        <a class="btn btn-ghost" href="#features">看看它怎么运作</a>
+      </div>
+      <p class="trust">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.5 8A5.5 5.5 0 1 1 8 2.5" stroke="#9A9184" stroke-width="1.6" stroke-linecap="round"/><path d="M8 .5L11 2.5 8 4.5z" fill="#9A9184"/></svg>
+        一处修改，手机与网页秒级同步
+      </p>
+    </div>
+
+    <!-- 产品视觉：手机样机 + 网页卡片 + 同步徽章 -->
+    <div class="hero-visual">
+      <div class="blob" aria-hidden="true"></div>
+      <div class="phone">
+        <div class="phone-status"><span>9:41</span><span class="status-icons">▮▮▮ ▉</span></div>
+        <div class="phone-header">
+          <strong>我的计划</strong>
+          <span class="avatar"></span>
+        </div>
+        <div class="phone-progress">
+          <span>9月22日 周二 · 已完成 1 / 4</span>
+          <div class="bar"><i style="width:25%"></i></div>
+        </div>
+        <div class="phone-tasks">
+          <div class="ptask done"><span class="pcheck">✓</span><div><b>晨间冥想 15 分钟</b><small>已完成 · 07:30</small></div></div>
+          <div class="ptask"><span class="pcheck"></span><div><b>给品牌方案写大纲 <em class="chip chip-work">工作</em></b><small>同步自网页版 · 刚刚</small></div></div>
+          <div class="ptask"><span class="pcheck"></span><div><b>晚上 7 点 · 瑜伽课 <em class="chip chip-life">生活</em></b><small>提醒 · 18:30</small></div></div>
+          <div class="ptask"><span class="pcheck"></span><div><b>读《拖延心理学》20 页</b><small>今天 · 睡前</small></div></div>
+        </div>
+      </div>
+      <div class="webcard">
+        <div class="webcard-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">youjihua.com</span></div>
+        <div class="webcard-body">
+          <div class="webcard-head"><strong>本周计划</strong><span class="chip chip-sync">● 已同步</span></div>
+          <div class="wrow done"><span class="pcheck sm">✓</span>晨间冥想 15 分钟</div>
+          <div class="wrow"><span class="pcheck sm"></span>给品牌方案写大纲</div>
+          <div class="wrow"><span class="pcheck sm"></span>晚上 7 点 · 瑜伽课</div>
+        </div>
+      </div>
+      <div class="sync-badge" title="实时同步">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M19.5 12a7.5 7.5 0 0 1-13.2 4.9M4.5 12a7.5 7.5 0 0 1 13.2-4.9" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M17.4 4.2L18 7.4 14.8 8M6.6 19.8L6 16.6l3.2-.6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 核心功能 -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">核心功能</span>
+      <h2>轻，但不简单</h2>
+      <p class="section-sub">只把两件事做到极致：随手记下来，和接着做下去。</p>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-copy">
+        <h3>随手记，自动归类</h3>
+        <p>输入「明天下午三点和牙医预约」，日期时间自动识别，直接归入对应清单。你只需要负责记，剩下的交给它。</p>
+        <ul class="points">
+          <li>自然语言输入，日期时间智能识别</li>
+          <li>清单、标签、提醒，一个都不繁琐</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <div class="input-demo"><span class="plus">＋</span>明天下午3点 和牙医预约<span class="cursor"></span></div>
+        <div class="parse-hint">⁘ 已识别时间与事项</div>
+        <div class="result-card">
+          <span class="chip chip-time">明天 15:00</span>
+          <div><b>和牙医预约</b><small>已归入「健康」清单 · 已设提醒</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row reverse">
+      <div class="feature-card">
+        <div class="focus-head"><strong>今日焦点</strong><span class="chip chip-focus">● 专注中 · 25:00</span></div>
+        <div class="focus-card">
+          <b>给品牌方案写大纲</b>
+          <div class="bar"><i style="width:40%"></i></div>
+          <small>已完成 2 / 5 个小节</small>
+        </div>
+        <div class="trow"><time>09:00</time><i class="tline"></i>晨间冥想</div>
+        <div class="trow active"><time>10:30</time><i class="tline"></i>给品牌方案写大纲</div>
+        <div class="trow"><time>19:00</time><i class="tline dim"></i>瑜伽课</div>
+      </div>
+      <div class="feature-copy">
+        <h3>每天一眼，先做要紧事</h3>
+        <p>打开就是今日焦点，不翻长长的清单。一天只主推一件要紧事，配合番茄钟专注计时，做完就划掉。</p>
+        <ul class="points">
+          <li>每日焦点 + 番茄钟，一次只做一件事</li>
+          <li>每周自动生成完成回顾，看得见进度</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 多端同步（深色区） -->
+<section class="sync" id="sync">
+  <div class="container sync-inner">
+    <div class="sync-copy">
+      <span class="eyebrow eyebrow-light">多端同步</span>
+      <h2>手机上记一笔，电脑上接着做</h2>
+      <p>地铁上用手机记下的想法，回到工位打开网页原样就在。所有设备共享同一份计划，永远不用来回拷贝。</p>
+      <div class="sync-points">
+        <div class="spoint"><span class="spoint-icon">⟳</span><div><b>云端实时同步</b><small>改动秒级到达手机、平板和网页</small></div></div>
+        <div class="spoint"><span class="spoint-icon">☁</span><div><b>离线也能记</b><small>地铁里、飞机上照常使用，联网后自动补齐</small></div></div>
+        <div class="spoint"><span class="spoint-icon">🔒</span><div><b>端到端加密</b><small>计划在传输全程加密，只有你能看到</small></div></div>
+      </div>
+      <a class="btn btn-warm" href="app.html">打开网页版</a>
+    </div>
+    <div class="devices">
+      <div class="webwin">
+        <div class="webwin-bar"><span class="dots"><i></i><i></i><i></i></span></div>
+        <div class="webwin-body">
+          <strong>本周计划</strong>
+          <span class="gbar" style="width:66%"></span>
+          <span class="gbar" style="width:83%"></span>
+          <span class="gbar" style="width:55%"></span>
+          <span class="gbar light" style="width:75%"></span>
+        </div>
+      </div>
+      <div class="phonemini">
+        <strong>我的计划</strong>
+        <span class="gbar soft"></span><span class="gbar soft"></span><span class="gbar soft"></span><span class="gbar soft"></span><span class="gbar soft"></span>
+      </div>
+      <div class="toast">✓ 已同步到 3 台设备</div>
+    </div>
+  </div>
+</section>
+
+<!-- 用户心声 -->
+<section class="voice" id="voice">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">用户心声</span>
+      <h2>他们把日子过得更有条理了</h2>
+    </div>
+    <div class="voice-grid">
+      <figure class="quote-main">
+        <blockquote>「用了三个月，网页和手机终于不用来回传备忘录了。早上在电脑前排好一天的计划，通勤路上手机上就能勾掉，晚上回顾一眼，这一天过得特别踏实。」</blockquote>
+        <figcaption><span class="avatar"></span><div><b>林晚舟</b><small>自由插画师 · 网页版 + iOS 用户</small></div></figcaption>
+      </figure>
+      <div class="quote-side">
+        <figure class="quote-card">
+          <blockquote>「自然语言输入太好用了，打一行字就是一条带提醒、带归类的计划。」</blockquote>
+          <figcaption>陈屿 · 产品经理</figcaption>
+        </figure>
+        <figure class="quote-card">
+          <blockquote>「每日焦点治好了我的清单焦虑，一天只盯一件事反而完成得更多。」</blockquote>
+          <figcaption>苏禾 · 在读研究生</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b class="accent">126 万+</b><span>条计划被创建</span></div>
+      <i class="vline"></i>
+      <div class="stat"><b>38 秒</b><span>平均记一条计划</span></div>
+      <i class="vline"></i>
+      <div class="stat"><b>4.9 分</b><span>应用商店评分</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a class="logo" href="index.html">
+          <svg width="30" height="30" viewBox="0 0 32 32"><rect width="32" height="32" rx="9" fill="#F0A868"/><path d="M9.5 16.5L14 21L22.5 11.5" stroke="#332C25" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>小有计划</span>
+        </a>
+      </div>
+      <div class="footer-col"><b>产品</b><a href="index.html">网页版</a><a href="app.html">手机 App</a><a href="#">更新日志</a></div>
+      <div class="footer-col"><b>支持</b><a href="#">帮助中心</a><a href="#sync">同步说明</a><a href="#">联系我们</a></div>
+      <div class="footer-col"><b>公司</b><a href="#">关于我们</a><a href="#">隐私政策</a><a href="#">服务条款</a></div>
+    </div>
+    <p class="footer-moment">把今天过好，就是了不起的计划。</p>
+    <div class="footer-bottom">
+      <span>版权所有 2026 小有计划 · 粤ICP备2026123456号</span>
+      <span>用计划，把日子过明白</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
