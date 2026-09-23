@@ -175,8 +175,8 @@
       found = true;
       text = text.replace(m[0], hint ? ' ' + hint + ' ' : ' ');
     } else if ((m = text.match(/(下下?周|下下?星期)([一二三四五六日天])/))) {
-      var target = '一二三四五六日天'.indexOf(m[2]);
-      if (target === 6 || target === 7) target = 0;
+      var weekMap = { '一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6, '日': 0, '天': 0 };
+      var target = weekMap[m[2]];
       var cur = base.getDay();
       var diff = (target - cur + 7) % 7;
       if (diff === 0) diff = 7;
@@ -184,8 +184,8 @@
       found = true;
       text = text.replace(m[0], ' ');
     } else if ((m = text.match(/(周|星期)([一二三四五六日天])/))) {
-      var t2 = '一二三四五六日天'.indexOf(m[2]);
-      if (t2 === 6 || t2 === 7) t2 = 0;
+      var weekMap2 = { '一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6, '日': 0, '天': 0 };
+      var t2 = weekMap2[m[2]];
       var diff2 = (t2 - base.getDay() + 7) % 7;
       if (diff2 === 0) diff2 = 7;
       base.setDate(base.getDate() + diff2);
