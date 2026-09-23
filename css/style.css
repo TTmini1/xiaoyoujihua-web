@@ -2,6 +2,10 @@
    小有计划 - 共享样式（官网 + 网页版工具）
    奶油底 #FBF6EF + 暖橙点缀 #E0764A
    ============================================ */
+
+/* hidden 属性优先级最高：防止被 display:flex 等规则覆盖（如识别预览框） */
+[hidden] { display: none !important; }
+
 :root {
   --bg: #FBF6EF;
   --ink: #322D27;
@@ -306,7 +310,7 @@ section h2 { font-size: 40px; font-weight: 700; }
 .progress-card { background: var(--accent-soft); border-radius: var(--radius-md); padding: 24px 28px; color: var(--accent-deep); font-size: 15px; font-weight: 500; }
 .app-input { display: flex; align-items: center; gap: 14px; background: var(--card-soft); border-radius: 14px; padding: 18px 22px; }
 .app-input .plus { color: var(--accent); font-size: 30px; font-weight: 600; line-height: 1; }
-.app-input input { flex: 1; border: 0; background: transparent; outline: none; font-size: 16px; color: var(--ink); font-family: var(--font); }
+.app-input input { flex: 1; min-width: 0; border: 0; background: transparent; outline: none; font-size: 16px; color: var(--ink); font-family: var(--font); }
 .app-input input::placeholder { color: #C0B5A5; }
 .add-btn { border: 0; background: var(--accent); color: #fff; font-family: var(--font); font-size: 14px; font-weight: 600; padding: 9px 26px; border-radius: 999px; cursor: pointer; }
 .add-btn:hover { filter: brightness(1.05); }
@@ -318,10 +322,11 @@ section h2 { font-size: 40px; font-weight: 700; }
 .task-item:hover { background: #F6EDDF; }
 .task-item .pcheck { width: 24px; height: 24px; font-size: 13px; }
 .task-item.done .pcheck { background: var(--accent); border-color: var(--accent); }
-.task-body { flex: 1; }
+.task-body { flex: 1; min-width: 0; }
 .task-body b { display: block; font-size: 16px; font-weight: 500; }
 .task-item.done .task-body b { color: #B7AC9E; text-decoration: line-through; text-decoration-color: #D8CCBA; }
 .task-body small { color: var(--muted-2); font-size: 12px; }
+.task-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
 .del-btn { border: 0; background: transparent; color: #C8BEB0; font-size: 18px; cursor: pointer; opacity: 0; transition: opacity .15s; padding: 4px 8px; }
 .task-item:hover .del-btn { opacity: 1; }
 .del-btn:hover { color: var(--accent); }
@@ -412,11 +417,34 @@ section h2 { font-size: 40px; font-weight: 700; }
   .hero-visual { width: 100%; height: 560px; transform: scale(.78); transform-origin: top center; }
   .cta-box { padding: 44px 24px; }
   .cta-box h2 { font-size: 26px; }
-  .app-wrap { padding: 24px 18px 60px; }
-  .app-title { font-size: 21px; }
+  .footer-bottom { flex-direction: column; align-items: center; gap: 8px; text-align: center; }
+
+  /* ---- 工具页手机适配 ---- */
+  .app-wrap { padding: 20px 16px 56px; }
+  .app-title { font-size: 20px; }
+  .app-header { margin-bottom: 20px; }
+  .back-home { font-size: 13px; }
+  .app-main { gap: 18px; }
+  .app-input { padding: 14px 16px; gap: 10px; border-radius: 12px; }
+  .app-input .plus { font-size: 26px; }
+  .add-btn { padding: 10px 18px; flex-shrink: 0; }
   .filter-bar { flex-direction: column; align-items: stretch; }
-  .tabs { overflow-x: auto; padding-bottom: 4px; }
-  .tab { padding: 8px 18px; white-space: nowrap; }
-  .task-item { padding: 16px 18px; gap: 12px; }
-  .star-btn, .drag-dot { opacity: 1; }
+  .tabs { gap: 10px; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+  .tab { padding: 9px 16px; white-space: nowrap; flex-shrink: 0; }
+  /* 触屏没有 hover：删除/星标常显，拖拽点与提示隐藏 */
+  .del-btn, .star-btn { opacity: 1; }
+  .drag-dot, .drag-hint { display: none; }
+  .task-item { padding: 15px 16px; gap: 12px; }
+  .del-btn { font-size: 20px; padding: 6px 10px; }
+  .list-head { justify-content: flex-start; }
+  .empty { padding: 64px 0; }
+  .scene-extra { padding: 26px 20px; }
+
+  /* ---- 落地页手机适配补强：收编溢出元素 ---- */
+  .blob { left: -20px; top: 0; width: 300px; height: 400px; }
+}
+
+/* 窄屏（<500px）：devices 组按内容宽缩放，起点对齐避免居中溢出 */
+@media (max-width: 500px) {
+  .devices { width: 460px; height: 390px; transform: scale(.76); transform-origin: top left; align-self: flex-start; }
 }
