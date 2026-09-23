@@ -185,6 +185,52 @@ section h2 { font-size: 40px; font-weight: 700; }
 .scene-card h3 { font-size: 19px; margin-bottom: 10px; }
 .scene-card p { color: var(--muted); font-size: 15px; line-height: 1.75; }
 
+/* ---------- 彩蛋场景：骂老板 ---------- */
+.scene-extra {
+  margin-top: 20px; padding: 32px 34px;
+  background: linear-gradient(135deg, #FFF3E9 0%, #FDEDE2 55%, #F8E7D6 100%);
+  border: 1px dashed #E8C4A8;
+  border-radius: var(--radius-md);
+  display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
+  position: relative; overflow: hidden;
+}
+.scene-extra::after {
+  content: ""; position: absolute; right: -40px; top: -40px;
+  width: 180px; height: 180px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(224,118,74,.14), transparent 70%);
+  pointer-events: none;
+}
+.scene-extra-text { position: relative; z-index: 1; }
+.scene-extra-text h3 { font-size: 20px; margin-bottom: 8px; }
+.scene-extra-text p { color: var(--muted); font-size: 15px; line-height: 1.7; }
+.quip-btn {
+  position: relative; z-index: 1;
+  font: inherit; font-size: 15px; font-weight: 600; color: #fff;
+  background: var(--accent); border: 0; cursor: pointer;
+  padding: 11px 22px; border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(224,118,74,.26);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.quip-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(224,118,74,.32); }
+.quip-btn:active { transform: translateY(0) scale(.97); }
+.quip-out {
+  position: relative; z-index: 1;
+  margin: 0; padding: 14px 18px;
+  background: #fff; border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  font-size: 15px; line-height: 1.7; color: #6B4A36;
+  max-width: 640px;
+  animation: quipIn .34s cubic-bezier(.22,1,.36,1);
+}
+.quip-note {
+  position: relative; z-index: 1;
+  margin: 0; font-size: 13px; line-height: 1.7; color: #A98A72;
+}
+@keyframes quipIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* ---------- 三步流程 ---------- */
 .steps { padding: 0 0 96px; }
 .step-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
