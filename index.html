@@ -171,6 +171,17 @@
         <p>自动生成的完成回顾把一天摊开，划掉的越多越踏实。明天要做什么，顺手就排上了。</p>
       </article>
     </div>
+
+    <!-- 彩蛋场景 -->
+    <div class="scene-extra reveal">
+      <div class="scene-extra-text">
+        <h3>最后，还有一个写不成清单的愿望</h3>
+        <p>工作里总有那么一两个瞬间，想干点清单之外的事。比如——</p>
+      </div>
+      <button class="quip-btn" type="button" data-quips='["骂老板:一键起草，措辞得体，绝不发送。","老板刚走，键盘还热着：想骂就骂，反正写在本地浏览器里，不上传、不同步、没人看得见。","项目改了七版回到第一版：这一刻需要一个「骂老板」清单，专门收纳这些念头。","骂完之后：气顺了，清单还是要打勾的，明天见。"]'>点一下，骂老板</button>
+      <p class="quip-out" id="quipOut" hidden>想骂就骂吧，反正没人看得见。</p>
+      <p class="quip-note">只是个玩笑：所有内容只存在你自己的浏览器里，不会上传、不会同步、不会有人看见。</p>
+    </div>
   </div>
 </section>
 
@@ -401,6 +412,25 @@
     });
   }, { threshold: 0.4 });
   Array.prototype.forEach.call(nums, function (el) { io.observe(el); });
+})();
+
+/* 彩蛋：骂老板 */
+(function () {
+  var btn = document.querySelector('.quip-btn');
+  var out = document.getElementById('quipOut');
+  if (!btn || !out) return;
+  var quips;
+  try { quips = JSON.parse(btn.getAttribute('data-quips')); } catch (e) { quips = []; }
+  if (!quips.length) return;
+  var idx = Math.floor(Math.random() * quips.length);
+  btn.addEventListener('click', function () {
+    out.textContent = quips[idx];
+    out.hidden = false;
+    out.style.animation = 'none';
+    void out.offsetWidth;
+    out.style.animation = '';
+    idx = (idx + 1) % quips.length;
+  });
 })();
 </script>
 
