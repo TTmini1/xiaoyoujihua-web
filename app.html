@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>网页版 - 小有计划</title>
-<meta name="description" content="小有计划网页版：轻点勾选、长按删除，计划保存在本机浏览器中。" />
+<meta name="description" content="小有计划网页版：自然语言记计划、优先级标记、分类标签、拖拽排序，数据保存在本机浏览器。" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23E0764A'/%3E%3Cpath d='M9.5 16.5L14 21L22.5 11.5' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
 <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -17,28 +17,56 @@
       <svg width="30" height="30" viewBox="0 0 32 32"><rect width="32" height="32" rx="9" fill="#E0764A"/><path d="M9.5 16.5L14 21L22.5 11.5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <strong>我的计划</strong>
     </div>
-    <a class="back-home" href="index.html">← 返回官网</a>
+    <div class="app-tools">
+      <button class="icon-btn" id="exportBtn" type="button" title="导出数据">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 3v11m0 0l-4-4m4 4l4-4M4 17v2.5A1.5 1.5 0 005.5 21h13a1.5 1.5 0 001.5-1.5V17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="icon-btn" id="importBtn" type="button" title="导入数据">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 21V10m0 0l-4 4m4-4l4 4M4 7V4.5A1.5 1.5 0 015.5 3h13A1.5 1.5 0 0120 4.5V7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <a class="back-home" href="index.html">← 返回官网</a>
+    </div>
   </header>
 
   <div class="app-main">
     <!-- 进度卡 -->
     <div class="progress-card">
-      <span id="progressText">—— · 已完成 0 / 0</span>
+      <div class="progress-top">
+        <span id="progressText">—— · 已完成 0 / 0</span>
+        <span class="progress-pct" id="progressPct">0%</span>
+      </div>
       <div class="bar"><i id="progressFill" style="width:0%"></i></div>
+      <div class="progress-legend" id="progressLegend"></div>
     </div>
 
     <!-- 输入栏 -->
     <div class="app-input">
       <span class="plus">＋</span>
-      <input id="taskInput" type="text" placeholder="记一条计划，回车即可添加…" maxlength="60" />
+      <input id="taskInput" type="text" placeholder="试试「明天下午三点 和牙医预约 #健康 !高」，回车添加…" maxlength="80" />
       <button id="addBtn" class="add-btn" type="button">添加</button>
     </div>
 
-    <!-- 标签页 -->
-    <div class="tabs" id="tabs">
-      <button class="tab active" data-tab="all">全部</button>
-      <button class="tab" data-tab="todo">未完成</button>
-      <button class="tab" data-tab="done">已完成</button>
+    <!-- 识别预览 -->
+    <div class="parse-preview" id="parsePreview" hidden>
+      <span class="parse-dot"></span>
+      <span id="parsePreviewText"></span>
+    </div>
+
+    <!-- 筛选栏 -->
+    <div class="filter-bar">
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-tab="all">全部</button>
+        <button class="tab" data-tab="todo">未完成</button>
+        <button class="tab" data-tab="done">已完成</button>
+        <button class="tab" data-tab="star">重点关注</button>
+      </div>
+      <div class="tag-filter" id="tagFilter"></div>
+    </div>
+
+    <!-- 排序说明 -->
+    <div class="list-head">
+      <span class="list-count" id="listCount"></span>
+      <span class="drag-hint">按住左侧圆点可拖拽排序</span>
     </div>
 
     <!-- 任务列表 -->
@@ -50,9 +78,12 @@
       <span>在上方输入框记下第一条计划吧</span>
     </div>
 
-    <p class="app-tip">轻点勾选完成 · 悬停后点 × 删除 · 数据保存在本机浏览器</p>
+    <p class="app-tip">轻点勾选完成 · 双击文字可编辑 · 悬停后点 × 删除 · 数据保存在本机浏览器</p>
   </div>
 </div>
+
+<input type="file" id="importFile" accept=".json" hidden />
+<input type="hidden" id="editId" />
 
 <script src="js/app.js"></script>
 </body>
