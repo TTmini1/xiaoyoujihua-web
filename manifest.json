@@ -1,0 +1,54 @@
+{
+  "name": "小有计划",
+  "short_name": "小有计划",
+  "description": "轻量的待办与计划工具：一句话记下来，日期时间自动识别，数据只存在你自己的设备里。",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "start_url": "app.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FBF6EF",
+  "theme_color": "#FBF6EF",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "打开工具",
+      "short_name": "工具",
+      "description": "直接进入计划工具页",
+      "url": "app.html"
+    },
+    {
+      "name": "帮助中心",
+      "short_name": "帮助",
+      "description": "查看使用帮助",
+      "url": "help.html"
+    }
+  ]
+}
