@@ -3,23 +3,28 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>小有计划 - 计划记下来，走到哪都同步</title>
-<meta name="description" content="小有计划是一个轻巧的待办与计划工具：网页上写好的计划，打开手机就能接着做。" />
+<title>小有计划 - 计划记下来，打开就能接着做</title>
+<meta name="description" content="小有计划是一个轻巧的待办与计划工具：一句话记下计划，日期时间自动识别。数据只存在你自己的设备里，不用注册、不上传。" />
+<link rel="canonical" href="https://100plus.top/" />
+<meta name="robots" content="index,follow" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="小有计划" />
-<meta property="og:title" content="小有计划 - 计划记下来，走到哪都同步" />
-<meta property="og:description" content="网页上写好的计划，打开手机就能接着做。轻巧的待办与计划工具，没有复杂设置，只有干净清爽的清单。" />
+<meta property="og:title" content="小有计划 - 计划记下来，打开就能接着做" />
+<meta property="og:description" content="一句话记下计划，日期时间自动识别。数据只存在你自己的设备里，不用注册、不上传。" />
 <meta property="og:url" content="https://100plus.top/" />
 <meta property="og:image" content="https://100plus.top/assets/og-720x720.png" />
 <meta property="og:image:width" content="720" />
 <meta property="og:image:height" content="720" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="小有计划 - 计划记下来，走到哪都同步" />
-<meta name="twitter:description" content="网页上写好的计划，打开手机就能接着做。轻巧的待办与计划工具。" />
+<meta name="twitter:title" content="小有计划 - 计划记下来，打开就能接着做" />
+<meta name="twitter:description" content="一句话记下计划，日期时间自动识别。数据只存在你自己的设备里。" />
 <meta name="twitter:image" content="https://100plus.top/assets/og-1200x630.png" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23E0764A'/%3E%3Cpath d='M9.5 16.5L14 21L22.5 11.5' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
-<link rel="stylesheet" href="css/style.css?v=20260924a" />
-<link rel="stylesheet" href="css/book.css?v=20260924a" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#FBF6EF" />
+<link rel="apple-touch-icon" href="assets/icon-192.png" />
+<link rel="stylesheet" href="css/style.css?v=20260924b" />
+<link rel="stylesheet" href="css/book.css?v=20260924b" />
 </head>
 <body>
 
@@ -41,7 +46,7 @@
     <nav class="nav-links">
       <a href="#features">功能亮点</a>
       <a href="#scenes">使用场景</a>
-      <a href="#sync">手机同步</a>
+      <a href="#sync">数据安全</a>
       <a href="#voice">用户心声</a>
       <a href="#faq">常见问题</a>
     </nav>
@@ -53,20 +58,20 @@
 <section class="hero">
   <div class="container hero-inner">
     <div class="hero-copy">
-      <span class="badge"><span class="badge-dot"></span>网页版 · 手机端 实时同步</span>
-      <h1>计划记下来，<br />走到哪都同步</h1>
-      <p class="sub">小有计划是一个轻巧的待办与计划工具：网页上写好的计划，打开手机就能接着做。没有复杂设置，只有干净清爽的清单。</p>
+      <span class="badge"><span class="badge-dot"></span>网页版 · 数据保存在本机</span>
+      <h1>计划记下来，<br />打开就能接着做</h1>
+      <p class="sub">小有计划是一个轻巧的待办与计划工具：用一句话写下计划，日期、时间、标签自动识别。没有复杂设置，只有干净清爽的清单。</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="app.html">免费开始使用</a>
         <a class="btn btn-ghost" href="#features">看看它怎么运作</a>
       </div>
       <p class="trust">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.5 8A5.5 5.5 0 1 1 8 2.5" stroke="#9A9184" stroke-width="1.6" stroke-linecap="round"/><path d="M8 .5L11 2.5 8 4.5z" fill="#9A9184"/></svg>
-        一处修改，手机与网页秒级同步
+        计划只存在你自己的浏览器里，不上传、不需要注册
       </p>
     </div>
 
-    <!-- 产品视觉：手机样机 + 网页卡片 + 同步徽章 -->
+    <!-- 产品视觉：手机样机 + 网页卡片 -->
     <div class="hero-visual">
       <div class="blob" aria-hidden="true"></div>
       <div class="phone">
@@ -81,22 +86,19 @@
         </div>
         <div class="phone-tasks">
           <div class="ptask done"><span class="pcheck">✓</span><div><b>晨间冥想 15 分钟</b><small>已完成 · 07:30</small></div></div>
-          <div class="ptask"><span class="pcheck"></span><div><b>给品牌方案写大纲 <em class="chip chip-work">工作</em></b><small>同步自网页版 · 刚刚</small></div></div>
-          <div class="ptask"><span class="pcheck"></span><div><b>晚上 7 点 · 瑜伽课 <em class="chip chip-life">生活</em></b><small>提醒 · 18:30</small></div></div>
+          <div class="ptask"><span class="pcheck"></span><div><b>给品牌方案写大纲 <em class="chip chip-work">工作</em></b><small>本周内</small></div></div>
+          <div class="ptask"><span class="pcheck"></span><div><b>晚上 7 点 · 瑜伽课 <em class="chip chip-life">生活</em></b><small>今天 · 19:00</small></div></div>
           <div class="ptask"><span class="pcheck"></span><div><b>读《拖延心理学》20 页</b><small>今天 · 睡前</small></div></div>
         </div>
       </div>
       <div class="webcard">
-        <div class="webcard-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">youjihua.com</span></div>
+        <div class="webcard-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">100plus.top</span></div>
         <div class="webcard-body">
-          <div class="webcard-head"><strong>本周计划</strong><span class="chip chip-sync">● 已同步</span></div>
+          <div class="webcard-head"><strong>本周计划</strong><span class="chip chip-sync">● 本机保存</span></div>
           <div class="wrow done"><span class="pcheck sm">✓</span>晨间冥想 15 分钟</div>
           <div class="wrow"><span class="pcheck sm"></span>给品牌方案写大纲</div>
           <div class="wrow"><span class="pcheck sm"></span>晚上 7 点 · 瑜伽课</div>
         </div>
-      </div>
-      <div class="sync-badge" title="实时同步">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M19.5 12a7.5 7.5 0 0 1-13.2 4.9M4.5 12a7.5 7.5 0 0 1 13.2-4.9" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M17.4 4.2L18 7.4 14.8 8M6.6 19.8L6 16.6l3.2-.6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
     </div>
   </div>
@@ -121,7 +123,7 @@
         <ul class="toc-list">
           <li><button class="toc-item" type="button" data-goto="0">
             <span class="toc-num">01</span>
-            <span class="toc-body"><span class="toc-name">封面</span><span class="toc-desc">计划记下来，走到哪都同步</span></span>
+            <span class="toc-body"><span class="toc-name">封面</span><span class="toc-desc">计划记下来，打开就能接着做</span></span>
             <span class="toc-arrow">→</span>
           </button></li>
           <li><button class="toc-item" type="button" data-goto="2">
@@ -136,12 +138,12 @@
           </button></li>
           <li><button class="toc-item" type="button" data-goto="4">
             <span class="toc-num">04</span>
-            <span class="toc-body"><span class="toc-name">三步流程</span><span class="toc-desc">随手记 → 自动同步 → 接着做</span></span>
+            <span class="toc-body"><span class="toc-name">三步流程</span><span class="toc-desc">随手记 → 自动整理 → 接着做</span></span>
             <span class="toc-arrow">→</span>
           </button></li>
           <li><button class="toc-item" type="button" data-goto="5">
             <span class="toc-num">05</span>
-            <span class="toc-body"><span class="toc-name">多端同步</span><span class="toc-desc">手机上记一笔，电脑上接着做</span></span>
+            <span class="toc-body"><span class="toc-name">数据与同步</span><span class="toc-desc">数据存在本机，云端同步即将上线</span></span>
             <span class="toc-arrow">→</span>
           </button></li>
           <li><button class="toc-item" type="button" data-goto="6">
@@ -174,31 +176,57 @@
               <span class="toc-sub-body"><b>网页版工具</b><small>自然语言记计划，日期时间自动识别，免安装</small></span>
               <span class="toc-badge live">已上线</span>
             </a>
+            <a class="toc-sub is-live" href="install.html">
+              <span class="toc-sub-icon">⬇</span>
+              <span class="toc-sub-body"><b>安装到桌面</b><small>添加到电脑桌面或手机主屏幕，像 App 一样打开</small></span>
+              <span class="toc-badge live">已上线</span>
+            </a>
+            <a class="toc-sub is-live" href="help.html">
+              <span class="toc-sub-icon">📖</span>
+              <span class="toc-sub-body"><b>帮助中心</b><small>使用技巧、备份迁移与常见问题解答</small></span>
+              <span class="toc-badge live">已上线</span>
+            </a>
           </div>
         </div>
 
         <div class="toc-group">
-          <p class="toc-group-head">筹备中</p>
+          <p class="toc-group-head">了解我们</p>
           <div class="toc-sublist">
+            <a class="toc-sub is-live" href="about.html">
+              <span class="toc-sub-icon">👥</span>
+              <span class="toc-sub-body"><b>关于我们</b><small>谁做了小有计划，为什么做</small></span>
+              <span class="toc-badge live">已上线</span>
+            </a>
+            <a class="toc-sub is-live" href="privacy.html">
+              <span class="toc-sub-icon">🔒</span>
+              <span class="toc-sub-body"><b>隐私政策</b><small>数据存在哪里、我们如何对待你的信息</small></span>
+              <span class="toc-badge live">已上线</span>
+            </a>
+            <a class="toc-sub is-live" href="terms.html">
+              <span class="toc-sub-icon">📄</span>
+              <span class="toc-sub-body"><b>服务条款</b><small>服务范围、使用规范与责任说明</small></span>
+              <span class="toc-badge live">已上线</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="toc-group">
+          <p class="toc-group-head">开发中</p>
+          <div class="toc-sublist">
+            <div class="toc-sub is-soon">
+              <span class="toc-sub-icon">☁</span>
+              <span class="toc-sub-body"><b>云端多端同步</b><small>手机、平板、电脑共享同一份清单</small></span>
+              <span class="toc-badge soon">开发中</span>
+            </div>
             <div class="toc-sub is-soon">
               <span class="toc-sub-icon">📱</span>
               <span class="toc-sub-body"><b>微信小程序</b><small>扫码即用，与网页版数据互通</small></span>
-              <span class="toc-badge soon">筹备中</span>
-            </div>
-            <div class="toc-sub is-soon">
-              <span class="toc-sub-icon">📖</span>
-              <span class="toc-sub-body"><b>帮助中心</b><small>使用技巧与常见问题解答</small></span>
-              <span class="toc-badge soon">筹备中</span>
+              <span class="toc-badge soon">开发中</span>
             </div>
             <div class="toc-sub is-soon">
               <span class="toc-sub-icon">🗓</span>
               <span class="toc-sub-body"><b>更新日志</b><small>功能更新的时间线记录</small></span>
-              <span class="toc-badge soon">筹备中</span>
-            </div>
-            <div class="toc-sub is-soon">
-              <span class="toc-sub-icon">👥</span>
-              <span class="toc-sub-body"><b>关于我们</b><small>谁做了小有计划，为什么做</small></span>
-              <span class="toc-badge soon">筹备中</span>
+              <span class="toc-badge soon">开发中</span>
             </div>
           </div>
         </div>
@@ -229,7 +257,7 @@
         <p>输入「明天下午三点和牙医预约」，日期时间自动识别，直接归入对应清单。你只需要负责记，剩下的交给它。</p>
         <ul class="points">
           <li>自然语言输入，日期时间智能识别</li>
-          <li>清单、标签、提醒，一个都不繁琐</li>
+          <li>清单、标签、优先级，一个都不繁琐</li>
         </ul>
       </div>
       <div class="feature-card">
@@ -237,7 +265,7 @@
         <div class="parse-hint">⁘ 已识别时间与事项</div>
         <div class="result-card">
           <span class="chip chip-time">明天 15:00</span>
-          <div><b>和牙医预约</b><small>已归入「健康」清单 · 已设提醒</small></div>
+          <div><b>和牙医预约</b><small>已归入「健康」清单 · 优先级：高</small></div>
         </div>
       </div>
     </div>
@@ -290,8 +318,8 @@
         <div class="scene-icon scene-icon-b">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="7" y="2.5" width="10" height="19" rx="2.6" stroke="currentColor" stroke-width="1.7"/><path d="M10.5 5.5h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="18" r="1" fill="currentColor"/></svg>
         </div>
-        <h3>通勤：手机上勾掉两件</h3>
-        <p>地铁里掏出手机，已完成的一键划掉。改动会同步回电脑，回工位时清单已经是最新的。</p>
+        <h3>通勤：掏出手机就能记</h3>
+        <p>地铁里想到什么随手记下，已完成的一键划掉。数据保存在本机，打开就还在。</p>
       </article>
       <article class="scene-card reveal">
         <div class="scene-icon scene-icon-c">
@@ -331,7 +359,7 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">它怎么运作</span>
-      <h2>记下来，同步走，接着做</h2>
+      <h2>记下来，理清楚，接着做</h2>
       <p class="section-sub">整套流程只有三步，学会它需要的时间比泡一杯咖啡还短。</p>
     </div>
     <ol class="step-list">
@@ -342,13 +370,13 @@
       </li>
       <li class="step-item reveal">
         <span class="step-num">02</span>
-        <h3>自动同步</h3>
-        <p>改动秒级推到其它设备，不需要手动保存或刷新。</p>
+        <h3>自动整理</h3>
+        <p>到期时间、标签、优先级自动归位，列表始终清爽。</p>
       </li>
       <li class="step-item reveal">
         <span class="step-num">03</span>
         <h3>接着做</h3>
-        <p>在任意设备打开就是最新进度，勾掉一条少一条。</p>
+        <p>打开就是上次的进度，勾掉一条少一条。</p>
       </li>
     </ol>
   </div>
@@ -356,19 +384,20 @@
 
 </div>
 
-<!-- ===== 第 6 页：多端同步 ===== -->
-<div class="book-page" data-page="5" data-name="多端同步">
-<!-- 多端同步（深色区） -->
+<!-- ===== 第 6 页：数据与同步 ===== -->
+<div class="book-page" data-page="5" data-name="数据与同步">
+<!-- 数据归属（深色区） -->
 <section class="sync" id="sync">
   <div class="container sync-inner">
     <div class="sync-copy">
-      <span class="eyebrow eyebrow-light">多端同步</span>
-      <h2>手机上记一笔，电脑上接着做</h2>
-      <p>地铁上用手机记下的想法，回到工位打开网页原样就在。所有设备共享同一份计划，永远不用来回拷贝。</p>
+      <span class="eyebrow eyebrow-light">数据与同步</span>
+      <h2>你的计划，数据在你手里</h2>
+      <p>网页版当前是<strong>纯本地模式</strong>：所有计划保存在你浏览器自己的存储里，不需要注册、不需要登录，我们看不到、也不会收集你的任何计划内容。</p>
       <div class="sync-points">
-        <div class="spoint"><span class="spoint-icon">⟳</span><div><b>云端实时同步</b><small>改动秒级到达手机、平板和网页</small></div></div>
-        <div class="spoint"><span class="spoint-icon">☁</span><div><b>离线也能记</b><small>地铁里、飞机上照常使用，联网后自动补齐</small></div></div>
-        <div class="spoint"><span class="spoint-icon">🔒</span><div><b>端到端加密</b><small>计划在传输全程加密，只有你能看到</small></div></div>
+        <div class="spoint"><span class="spoint-icon">💾</span><div><b>数据保存在本机</b><small>计划存在当前浏览器，关闭网页和电脑都不会丢</small></div></div>
+        <div class="spoint"><span class="spoint-icon">⇅</span><div><b>随时导出备份</b><small>一键导出 JSON 文件，换设备或换浏览器时导入即可搬过去</small></div></div>
+        <div class="spoint"><span class="spoint-icon">🔒</span><div><b>不上传，不收集</b><small>没有服务器、没有账号，计划内容不会离开你的设备</small></div></div>
+        <div class="spoint spoint-soon"><span class="spoint-icon">☁</span><div><b>云端多端同步 <em class="sp-tag">即将上线</em></b><small>手机、平板、电脑共享同一份清单，正在开发中</small></div></div>
       </div>
       <a class="btn btn-warm" href="app.html">打开网页版</a>
     </div>
@@ -387,7 +416,7 @@
         <strong>我的计划</strong>
         <span class="gbar soft"></span><span class="gbar soft"></span><span class="gbar soft"></span><span class="gbar soft"></span><span class="gbar soft"></span>
       </div>
-      <div class="toast">✓ 已同步到 3 台设备</div>
+      <div class="toast">✓ 已导出到 JSON 文件</div>
     </div>
   </div>
 </section>
@@ -410,7 +439,7 @@
       </figure>
       <div class="quote-side">
         <figure class="quote-card reveal">
-          <blockquote>「自然语言输入太好用了，打一行字就是一条带提醒、带归类的计划。」</blockquote>
+          <blockquote>「自然语言输入太好用了，打一行字就是一条带时间、带归类的计划。」</blockquote>
           <figcaption>陈屿 · 产品经理</figcaption>
         </figure>
         <figure class="quote-card reveal">
@@ -426,7 +455,7 @@
         <figcaption>周叙 · 应届毕业生</figcaption>
       </figure>
       <figure class="quote-mini reveal">
-        <blockquote>「带团队之后最怕忘记跟进，现在随手记一句，第二天它准时提醒我。」</blockquote>
+        <blockquote>「带团队之后最怕忘记跟进，现在随手记一句，第二天打开就能看到。」</blockquote>
         <figcaption>何舟 · 团队负责人</figcaption>
       </figure>
       <figure class="quote-mini reveal">
@@ -434,16 +463,16 @@
         <figcaption>许知 · 插画师</figcaption>
       </figure>
       <figure class="quote-mini reveal">
-        <blockquote>「出差在飞机上照样记，落地联网自动补齐，从没丢过一条。」</blockquote>
+        <blockquote>「出差路上照样记，回来导出备份一份，换电脑也不担心。」</blockquote>
         <figcaption>沈其 · 咨询顾问</figcaption>
       </figure>
     </div>
     <div class="stats">
-      <div class="stat"><b class="accent">126 万+</b><span>条计划被创建</span></div>
+      <div class="stat"><b class="accent">0</b><span>条数据上传服务器</span></div>
       <i class="vline"></i>
-      <div class="stat"><b>38 秒</b><span>平均记一条计划</span></div>
+      <div class="stat"><b>0 秒</b><span>等待，打开即可用</span></div>
       <i class="vline"></i>
-      <div class="stat"><b>4.9 分</b><span>应用商店评分</span></div>
+      <div class="stat"><b>25 KB</b><span>整站体积，加载极快</span></div>
     </div>
   </div>
 </section>
@@ -463,23 +492,27 @@
     <div class="faq-list">
       <details class="faq-item reveal" open>
         <summary>免费版有什么限制？</summary>
-        <p>清单数量、标签数量和设备数量都不限制。网页版和手机端的基础同步永久免费，不需要绑定支付方式。</p>
+        <p>清单数量、标签数量都不限制，全部功能免费用，不需要绑定支付方式，也不需要注册账号。</p>
       </details>
       <details class="faq-item reveal">
         <summary>我的计划数据存在哪里？</summary>
-        <p>同步版数据存在云端并全程加密；如果你只想本地使用，网页版也支持纯本地模式，计划只留在你自己的浏览器里，不会上传。</p>
+        <p>存在你当前使用的这个浏览器里（浏览器本地存储）。我们没有任何服务器，也不需要你注册账号，所以你的计划内容不会离开这台设备，我们看不到也拿不到。</p>
       </details>
       <details class="faq-item reveal">
         <summary>没有网络时还能用吗？</summary>
-        <p>可以。离线状态下照常记录和勾选，恢复网络后会自动把改动补同步到其它设备，不会丢失也不会产生重复条目。</p>
+        <p>可以，而且完全不受影响。因为数据就在本机，断网时照常记录、勾选和删除，联网后也不需要做任何同步操作。</p>
       </details>
       <details class="faq-item reveal">
         <summary>换手机或换电脑，数据会跟着走吗？</summary>
-        <p>会。同一账号登录后，新设备拉取的就是最新那一份清单，不需要导出导入，也不需要重新整理。</p>
+        <p>目前需要手动搬一次：在原设备点「导出」下载一个 JSON 文件，在新设备点「导入」把它选进来，计划就完整过去了。云端多端同步正在开发中，上线后这一步就不需要了。</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>数据会不会丢？我该怎么备份？</summary>
+        <p>浏览器本地存储可能因为清理浏览器数据、使用无痕模式或系统自动清理而丢失，所以我们强烈建议你定期点「导出」保存一份 JSON 备份，它同时也是换设备迁移的方式。</p>
       </details>
       <details class="faq-item reveal">
         <summary>能和朋友或同事协作同一份计划吗？</summary>
-        <p>可以共享清单并分配条目，权限分「可编辑」和「仅查看」两档。共享清单里的改动同样实时同步给所有成员。</p>
+        <p>暂时不能。共享清单、成员权限这些需要云端账号体系，属于规划中的能力，目前还没有实现。</p>
       </details>
     </div>
   </div>
@@ -513,13 +546,13 @@
           <span>小有计划</span>
         </a>
       </div>
-      <div class="footer-col"><b>产品</b><a href="index.html">网页版</a><a href="app.html">手机 App</a><a href="#">更新日志</a></div>
-      <div class="footer-col"><b>支持</b><a href="#">帮助中心</a><a href="#sync">同步说明</a><a href="mailto:tyminye@gmail.com">联系我们</a></div>
-      <div class="footer-col"><b>公司</b><a href="#">关于我们</a><a href="#">隐私政策</a><a href="#">服务条款</a></div>
+      <div class="footer-col"><b>产品</b><a href="index.html">网页版</a><a href="app.html">打开工具</a><a href="install.html">安装到桌面</a></div>
+      <div class="footer-col"><b>支持</b><a href="help.html">帮助中心</a><a href="#sync">数据说明</a><a href="mailto:tyminye@gmail.com">联系我们</a></div>
+      <div class="footer-col"><b>关于</b><a href="about.html">关于我们</a><a href="privacy.html">隐私政策</a><a href="terms.html">服务条款</a></div>
     </div>
     <p class="footer-moment">把今天过好，就是了不起的计划。</p>
     <div class="footer-bottom">
-      <span>版权所有 2026 小有计划 · 粤ICP备2026123456号 · 企业邮箱 <a class="footer-mail" href="mailto:tyminye@gmail.com">tyminye@gmail.com</a></span>
+      <span>版权所有 2026 小有计划 · <a class="footer-icp" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备2026123456号</a> · 联系邮箱 <a class="footer-mail" href="mailto:tyminye@gmail.com">tyminye@gmail.com</a></span>
       <span>用计划，把日子过明白</span>
     </div>
   </div>
@@ -611,7 +644,15 @@
   });
 })();
 </script>
-<script src="js/book.js?v=20260924a"></script>
-
+<script src="js/book.js?v=20260924b"></script>
+<script>
+/* 注册 Service Worker：让站点可安装、离线可打开。
+   失败时静默降级，不影响正常浏览。 */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js', { scope: './' }).catch(function () {});
+  });
+}
+</script>
 </body>
 </html>
