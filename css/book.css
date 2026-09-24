@@ -1,0 +1,242 @@
+/* ============================================================
+   翻书模式（Book Mode）
+   —— 落地页在桌面端呈现逐页翻阅的画册效果；手机端自动降级为纵向滚动。
+   思路：不改动原有 8 个 section 的内容，由 JS 把它们分配进 .book-page，
+        本样式只负责「书」的外观、翻页动画与模式切换。
+   ============================================================ */
+
+/* 默认（无 JS / 手机端）：书壳完全透明，页面就是普通纵向滚动 —— 保证降级可用 */
+.book-shell { display: contents; }
+.book-page { display: contents; }
+.book-progress, .book-nav, .book-hint { display: none; }
+
+/* ---------- 桌面端翻书模式（由 body.book-mode 激活） ---------- */
+body.book-mode {
+  overflow: hidden;                    /* 翻书时锁定整页滚动 */
+  height: 100vh;
+  background: linear-gradient(160deg, #FBF6EF 0%, #F6EAE0 52%, #F3E2D3 100%);
+}
+
+/* 书壳：居中承载当前页 */
+body.book-mode .book-shell {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  perspective: 2400px;                 /* 3D 翻转透视 */
+  perspective-origin: 50% 46%;
+}
+
+/* 单页：默认堆叠隐藏，仅当前页可见 */
+body.book-mode .book-page {
+  display: block;
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;                    /* 单页内容超出时页内滚动 */
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  background: var(--bg);
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: left center;
+  transform: rotateY(-14deg) scale(.96);
+  transition: opacity .5s cubic-bezier(.22,.61,.36,1),
+              transform .62s cubic-bezier(.22,.61,.36,1),
+              visibility .5s;
+  box-shadow: 0 30px 90px -20px rgba(120, 86, 60, .28);
+  will-change: transform, opacity;
+}
+
+/* 当前页：正面朝向用户 */
+body.book-mode .book-page.is-current {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  z-index: 3;
+}
+
+/* 已翻过的页：向左后方退出（营造"翻过去"的层叠感） */
+body.book-mode .book-page.is-flipped {
+  opacity: 0;
+  visibility: hidden;
+  transform: rotateY(16deg) scale(.94);
+  transform-origin: right center;
+}
+
+/* 页内内容容器：给单页留出呼吸空间 */
+body.book-mode .book-page > section {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6vh 0;
+}
+/* 导航条不参与拉伸：保持自然高度吸附在书页顶部 */
+body.book-mode .book-page > header {
+  min-height: auto;
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 12;
+  background: rgba(251, 246, 239, .92);
+  backdrop-filter: blur(10px);
+}
+/* section 内的主容器在 flex 拉伸下保持满宽 */
+body.book-mode .book-page > section > .container { width: 100%; }
+/* 封面页：hero 原生 padding 已足够，书页层不再叠加，确保一屏放下 */
+body.book-mode .book-page[data-page="0"] > .hero { padding: 12px 0 24px; }
+body.book-mode .book-page[data-page="0"] { display: flex; flex-direction: column; }
+body.book-mode .book-page[data-page="0"] > .hero { flex: 1; justify-content: center; }
+
+/* ---------- 翻页控件：右下角按钮组 ---------- */
+body.book-mode .book-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 40;
+}
+body.book-mode .book-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 46px;
+  height: 46px;
+  padding: 0 16px;
+  border: 1px solid rgba(140, 102, 71, .2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .92);
+  backdrop-filter: blur(10px);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 8px 22px -6px rgba(140, 102, 71, .22);
+  transition: transform .2s, box-shadow .2s, opacity .2s, background .2s;
+}
+body.book-mode .book-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -8px rgba(140, 102, 71, .3);
+  background: #fff;
+}
+body.book-mode .book-btn:disabled { opacity: .34; cursor: not-allowed; }
+body.book-mode .book-btn.is-primary {
+  background: var(--accent, #E0764A);
+  border-color: transparent;
+  color: #fff;
+}
+body.book-mode .book-btn.is-primary:hover:not(:disabled) { background: #CE6A40; }
+
+/* ---------- 页码 / 进度 ---------- */
+body.book-mode .book-progress {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: fixed;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  z-index: 40;
+}
+body.book-mode .book-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(140, 102, 71, .26);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: width .3s cubic-bezier(.22,.61,.36,1), background .3s;
+}
+body.book-mode .book-dot:hover { background: rgba(140, 102, 71, .45); }
+body.book-mode .book-dot.is-current {
+  width: 22px;
+  background: var(--accent, #E0764A);
+}
+body.book-mode .book-count {
+  position: fixed;
+  right: 30px;
+  bottom: 88px;
+  z-index: 40;
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: .06em;
+  color: rgba(90, 72, 58, .5);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 首次进入的提示条 ---------- */
+body.book-mode .book-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: fixed;
+  left: 50%;
+  bottom: 96px;                        /* 避开顶部导航，放在页面下方 */
+  transform: translateX(-50%);
+  z-index: 45;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: rgba(51, 44, 37, .86);
+  backdrop-filter: blur(8px);
+  color: #FBF6EF;
+  font-size: 13px;
+  white-space: nowrap;
+  box-shadow: 0 10px 26px -8px rgba(0, 0, 0, .3);
+  transition: opacity .45s, transform .45s;
+}
+body.book-mode .book-hint.is-hidden {
+  opacity: 0;
+  transform: translate(-50%, 14px);
+  pointer-events: none;
+}
+body.book-mode .book-hint kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, .16);
+  font-family: inherit;
+  font-size: 12px;
+}
+
+/* ---------- 翻书模式下页内锚点偏移与导航适配 ---------- */
+body.book-mode .book-page > * { scroll-margin-top: 0; }
+
+/* ---------- 翻页动画：进入方向 ---------- */
+body.book-mode .book-page.is-current.from-next { animation: bookInNext .62s cubic-bezier(.22,.61,.36,1) both; }
+body.book-mode .book-page.is-current.from-prev { animation: bookInPrev .62s cubic-bezier(.22,.61,.36,1) both; }
+@keyframes bookInNext {
+  from { opacity: 0; transform: rotateY(-13deg) scale(.965) translateX(3%); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes bookInPrev {
+  from { opacity: 0; transform: rotateY(13deg) scale(.965) translateX(-3%); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* 书脊阴影：增强"这是一本书"的暗示 */
+body.book-mode .book-shell::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 74px;
+  pointer-events: none;
+  z-index: 6;
+  background: linear-gradient(90deg, rgba(120, 86, 60, .13), rgba(120, 86, 60, 0));
+}
+
+/* ---------- 关闭翻书（小屏或用户偏好） ---------- */
+body.book-mode .book-shell.book-off { display: contents; }
+body.book-mode .book-shell.book-off .book-page { display: contents; }
+
+/* 尊重系统「减少动态效果」设置 */
+@media (prefers-reduced-motion: reduce) {
+  body.book-mode .book-page,
+  body.book-mode .book-page.is-current { animation: none !important; transition: opacity .18s, visibility .18s; transform: none !important; }
+}
