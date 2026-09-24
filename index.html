@@ -24,7 +24,7 @@
 <body>
 
 <!-- 翻书模式控件（仅桌面端翻书模式可见；手机端自动隐藏，走普通滚动） -->
-<div class="book-hint" aria-hidden="true">滚动或按 <kbd>←</kbd> <kbd>→</kbd> 翻页 · 共 8 页</div>
+<div class="book-hint" aria-hidden="true">滚动或按 <kbd>←</kbd> <kbd>→</kbd> 翻页 · 共 9 页</div>
 
 <div class="book-shell">
 
@@ -104,8 +104,116 @@
 
 </div>
 
-<!-- ===== 第 2 页：核心功能 ===== -->
-<div class="book-page" data-page="1" data-name="核心功能">
+<!-- ===== 第 2 页：目录 ===== -->
+<div class="book-page" data-page="1" data-name="目录">
+<section class="toc-section">
+  <div class="container">
+    <div class="toc-head reveal">
+      <span class="eyebrow">目录</span>
+      <h2>看看这份计划，都写了什么</h2>
+      <p>左边是本页的八个章节，点一下直接翻过去；右边是配套的独立页面，网页版现在就能用。</p>
+    </div>
+
+    <div class="toc-wrap">
+      <!-- 总目录：本页章节 -->
+      <div class="toc-main reveal">
+        <div class="toc-col-title"><b>总目录</b><span>本页 8 个章节</span></div>
+        <ul class="toc-list">
+          <li><button class="toc-item" type="button" data-goto="0">
+            <span class="toc-num">01</span>
+            <span class="toc-body"><span class="toc-name">封面</span><span class="toc-desc">计划记下来，走到哪都同步</span></span>
+            <span class="toc-arrow">→</span>
+          </button></li>
+          <li><button class="toc-item" type="button" data-goto="2">
+            <span class="toc-num">02</span>
+            <span class="toc-body"><span class="toc-name">核心功能</span><span class="toc-desc">随手记下来、每天一眼、先做要紧事</span></span>
+            <span class="toc-arrow">→</span>
+          </button></li>
+          <li><button class="toc-item" type="button" data-goto="3">
+            <span class="toc-num">03</span>
+            <span class="toc-body"><span class="toc-name">使用场景</span><span class="toc-desc">工作、生活、学习、出行，各有各的清单</span></span>
+            <span class="toc-arrow">→</span>
+          </button></li>
+          <li><button class="toc-item" type="button" data-goto="4">
+            <span class="toc-num">04</span>
+            <span class="toc-body"><span class="toc-name">三步流程</span><span class="toc-desc">随手记 → 自动同步 → 接着做</span></span>
+            <span class="toc-arrow">→</span>
+          </button></li>
+          <li><button class="toc-item" type="button" data-goto="5">
+            <span class="toc-num">05</span>
+            <span class="toc-body"><span class="toc-name">多端同步</span><span class="toc-desc">手机上记一笔，电脑上接着做</span></span>
+            <span class="toc-arrow">→</span>
+          </button></li>
+          <li><button class="toc-item" type="button" data-goto="6">
+            <span class="toc-num">06</span>
+            <span class="toc-body"><span class="toc-name">用户心声</span><span class="toc-desc">真实使用者的评价与反馈</span></span>
+            <span class="toc-arrow">→</span>
+          </button></li>
+          <li><button class="toc-item" type="button" data-goto="7">
+            <span class="toc-num">07</span>
+            <span class="toc-body"><span class="toc-name">常见问题</span><span class="toc-desc">免费版限制、数据存放、离线使用等</span></span>
+            <span class="toc-arrow">→</span>
+          </button></li>
+          <li><button class="toc-item" type="button" data-goto="8">
+            <span class="toc-num">08</span>
+            <span class="toc-body"><span class="toc-name">开始使用</span><span class="toc-desc">打开网页版就能开始，不用注册</span></span>
+            <span class="toc-arrow">→</span>
+          </button></li>
+        </ul>
+      </div>
+
+      <!-- 附属目录：独立页面 -->
+      <div class="toc-side reveal">
+        <div class="toc-col-title"><b>附属目录</b><span>独立页面</span></div>
+
+        <div class="toc-group">
+          <p class="toc-group-head">立即可用</p>
+          <div class="toc-sublist">
+            <a class="toc-sub is-live" href="app.html">
+              <span class="toc-sub-icon">✎</span>
+              <span class="toc-sub-body"><b>网页版工具</b><small>自然语言记计划，日期时间自动识别，免安装</small></span>
+              <span class="toc-badge live">已上线</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="toc-group">
+          <p class="toc-group-head">筹备中</p>
+          <div class="toc-sublist">
+            <div class="toc-sub is-soon">
+              <span class="toc-sub-icon">📱</span>
+              <span class="toc-sub-body"><b>微信小程序</b><small>扫码即用，与网页版数据互通</small></span>
+              <span class="toc-badge soon">筹备中</span>
+            </div>
+            <div class="toc-sub is-soon">
+              <span class="toc-sub-icon">📖</span>
+              <span class="toc-sub-body"><b>帮助中心</b><small>使用技巧与常见问题解答</small></span>
+              <span class="toc-badge soon">筹备中</span>
+            </div>
+            <div class="toc-sub is-soon">
+              <span class="toc-sub-icon">🗓</span>
+              <span class="toc-sub-body"><b>更新日志</b><small>功能更新的时间线记录</small></span>
+              <span class="toc-badge soon">筹备中</span>
+            </div>
+            <div class="toc-sub is-soon">
+              <span class="toc-sub-icon">👥</span>
+              <span class="toc-sub-body"><b>关于我们</b><small>谁做了小有计划，为什么做</small></span>
+              <span class="toc-badge soon">筹备中</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="toc-foot">
+          翻书模式下按 <kbd>←</kbd> <kbd>→</kbd> 或滚动即可翻页，也可直接点上面任意条目跳转。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ===== 第 3 页：核心功能 ===== -->
+<div class="book-page" data-page="2" data-name="核心功能">
 <!-- 核心功能 -->
 <section class="features" id="features">
   <div class="container">
@@ -160,8 +268,8 @@
 
 </div>
 
-<!-- ===== 第 3 页：使用场景 ===== -->
-<div class="book-page" data-page="2" data-name="使用场景">
+<!-- ===== 第 4 页：使用场景 ===== -->
+<div class="book-page" data-page="3" data-name="使用场景">
 <!-- 使用场景 -->
 <section class="scenes" id="scenes">
   <div class="container">
@@ -216,8 +324,8 @@
 
 </div>
 
-<!-- ===== 第 4 页：三步流程 ===== -->
-<div class="book-page" data-page="3" data-name="三步流程">
+<!-- ===== 第 5 页：三步流程 ===== -->
+<div class="book-page" data-page="4" data-name="三步流程">
 <!-- 三步流程 -->
 <section class="steps" id="how">
   <div class="container">
@@ -248,8 +356,8 @@
 
 </div>
 
-<!-- ===== 第 5 页：多端同步 ===== -->
-<div class="book-page" data-page="4" data-name="多端同步">
+<!-- ===== 第 6 页：多端同步 ===== -->
+<div class="book-page" data-page="5" data-name="多端同步">
 <!-- 多端同步（深色区） -->
 <section class="sync" id="sync">
   <div class="container sync-inner">
@@ -286,8 +394,8 @@
 
 </div>
 
-<!-- ===== 第 6 页：用户心声 ===== -->
-<div class="book-page" data-page="5" data-name="用户心声">
+<!-- ===== 第 7 页：用户心声 ===== -->
+<div class="book-page" data-page="6" data-name="用户心声">
 <!-- 用户心声 -->
 <section class="voice" id="voice">
   <div class="container">
@@ -342,8 +450,8 @@
 
 </div>
 
-<!-- ===== 第 7 页：常见问题 ===== -->
-<div class="book-page" data-page="6" data-name="常见问题">
+<!-- ===== 第 8 页：常见问题 ===== -->
+<div class="book-page" data-page="7" data-name="常见问题">
 <!-- 常见问题 -->
 <section class="faq" id="faq">
   <div class="container faq-inner">
@@ -379,8 +487,8 @@
 
 </div>
 
-<!-- ===== 第 8 页：开始使用 ===== -->
-<div class="book-page" data-page="7" data-name="开始使用">
+<!-- ===== 第 9 页：开始使用 ===== -->
+<div class="book-page" data-page="8" data-name="开始使用">
 <!-- 结尾行动号召 -->
 <section class="cta-final">
   <div class="container">
@@ -433,8 +541,9 @@
   <button class="book-dot" type="button" aria-label="第 6 页"></button>
   <button class="book-dot" type="button" aria-label="第 7 页"></button>
   <button class="book-dot" type="button" aria-label="第 8 页"></button>
+  <button class="book-dot" type="button" aria-label="第 9 页"></button>
 </div>
-<p class="book-count">1 / 8</p>
+<p class="book-count">1 / 9</p>
 
 
 <script>
