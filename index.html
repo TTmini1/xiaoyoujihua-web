@@ -19,9 +19,18 @@
 <meta name="twitter:image" content="https://100plus.top/assets/og-1200x630.png" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23E0764A'/%3E%3Cpath d='M9.5 16.5L14 21L22.5 11.5' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
 <link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/book.css" />
 </head>
 <body>
 
+<!-- 翻书模式控件（仅桌面端翻书模式可见；手机端自动隐藏，走普通滚动） -->
+<div class="book-hint" aria-hidden="true">滚动或按 <kbd>←</kbd> <kbd>→</kbd> 翻页 · 共 8 页</div>
+
+<div class="book-shell">
+
+
+<!-- ===== 第 1 页：封面 ===== -->
+<div class="book-page" data-page="0" data-name="封面">
 <!-- 顶部导航 -->
 <header class="nav">
   <div class="container nav-inner">
@@ -93,6 +102,10 @@
   </div>
 </section>
 
+</div>
+
+<!-- ===== 第 2 页：核心功能 ===== -->
+<div class="book-page" data-page="1" data-name="核心功能">
 <!-- 核心功能 -->
 <section class="features" id="features">
   <div class="container">
@@ -145,6 +158,10 @@
   </div>
 </section>
 
+</div>
+
+<!-- ===== 第 3 页：使用场景 ===== -->
+<div class="book-page" data-page="2" data-name="使用场景">
 <!-- 使用场景 -->
 <section class="scenes" id="scenes">
   <div class="container">
@@ -197,6 +214,10 @@
   </div>
 </section>
 
+</div>
+
+<!-- ===== 第 4 页：三步流程 ===== -->
+<div class="book-page" data-page="3" data-name="三步流程">
 <!-- 三步流程 -->
 <section class="steps" id="how">
   <div class="container">
@@ -225,6 +246,10 @@
   </div>
 </section>
 
+</div>
+
+<!-- ===== 第 5 页：多端同步 ===== -->
+<div class="book-page" data-page="4" data-name="多端同步">
 <!-- 多端同步（深色区） -->
 <section class="sync" id="sync">
   <div class="container sync-inner">
@@ -259,6 +284,10 @@
   </div>
 </section>
 
+</div>
+
+<!-- ===== 第 6 页：用户心声 ===== -->
+<div class="book-page" data-page="5" data-name="用户心声">
 <!-- 用户心声 -->
 <section class="voice" id="voice">
   <div class="container">
@@ -311,6 +340,10 @@
   </div>
 </section>
 
+</div>
+
+<!-- ===== 第 7 页：常见问题 ===== -->
+<div class="book-page" data-page="6" data-name="常见问题">
 <!-- 常见问题 -->
 <section class="faq" id="faq">
   <div class="container faq-inner">
@@ -344,6 +377,10 @@
   </div>
 </section>
 
+</div>
+
+<!-- ===== 第 8 页：开始使用 ===== -->
+<div class="book-page" data-page="7" data-name="开始使用">
 <!-- 结尾行动号召 -->
 <section class="cta-final">
   <div class="container">
@@ -378,7 +415,27 @@
       <span>用计划，把日子过明白</span>
     </div>
   </div>
-</footer>
+</footer></div>
+</div>
+<!-- /book-shell -->
+
+<!-- 翻页控件与页码（翻书模式显示） -->
+<nav class="book-nav" aria-label="翻页">
+  <button class="book-btn book-prev" type="button">← 上一页</button>
+  <button class="book-btn book-next is-primary" type="button">下一页 →</button>
+</nav>
+<div class="book-progress" role="tablist" aria-label="页面导航">
+  <button class="book-dot is-current" type="button" aria-label="第 1 页"></button>
+  <button class="book-dot" type="button" aria-label="第 2 页"></button>
+  <button class="book-dot" type="button" aria-label="第 3 页"></button>
+  <button class="book-dot" type="button" aria-label="第 4 页"></button>
+  <button class="book-dot" type="button" aria-label="第 5 页"></button>
+  <button class="book-dot" type="button" aria-label="第 6 页"></button>
+  <button class="book-dot" type="button" aria-label="第 7 页"></button>
+  <button class="book-dot" type="button" aria-label="第 8 页"></button>
+</div>
+<p class="book-count">1 / 8</p>
+
 
 <script>
 /* 滚动入场动画：元素进入视口时淡入上浮 */
@@ -445,6 +502,7 @@
   });
 })();
 </script>
+<script src="js/book.js"></script>
 
 </body>
 </html>
