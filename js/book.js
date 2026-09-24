@@ -229,7 +229,28 @@
   }, { passive: true });
 
   /* ------------------------------------------------------------
-     7. 锚点链接：翻书模式下转为"跳到对应页"
+     7. 目录页：点击条目直接跳到对应页
+     ------------------------------------------------------------ */
+  document.addEventListener('click', function (e) {
+    var item = e.target.closest && e.target.closest('[data-goto]');
+    if (!item) return;
+    if (!isBookOn()) {
+      // 滚动模式下：目录条目退化为"滚到对应 section"
+      var idx0 = parseInt(item.getAttribute('data-goto'), 10);
+      var pg = pages[idx0];
+      if (pg) {
+        var sec = pg.querySelector('section');
+        if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      return;
+    }
+    e.preventDefault();
+    var idx = parseInt(item.getAttribute('data-goto'), 10);
+    if (!isNaN(idx)) goto(idx);
+  }, true);
+
+  /* ------------------------------------------------------------
+     8. 锚点链接：翻书模式下转为"跳到对应页"
      ------------------------------------------------------------ */
   document.addEventListener('click', function (e) {
     if (!isBookOn()) return;
@@ -247,7 +268,7 @@
   }, true);
 
   /* ------------------------------------------------------------
-     8. 模式切换：响应窗口尺寸变化
+     9. 模式切换：响应窗口尺寸变化
      ------------------------------------------------------------ */
   var resizeTimer = null;
   window.addEventListener('resize', function () {
@@ -262,7 +283,7 @@
   });
 
   /* ------------------------------------------------------------
-     9. 初始化
+     10. 初始化
      ---- 首屏带 hash 深链接时，先按滚动模式定位，避免"跳错页"
      ------------------------------------------------------------ */
   var hash = location.hash ? location.hash.slice(1) : '';
