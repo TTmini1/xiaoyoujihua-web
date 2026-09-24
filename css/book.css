@@ -240,3 +240,172 @@ body.book-mode .book-shell.book-off .book-page { display: contents; }
   body.book-mode .book-page,
   body.book-mode .book-page.is-current { animation: none !important; transition: opacity .18s, visibility .18s; transform: none !important; }
 }
+
+/* ============================================================
+   目录页（总目录 + 附属目录）
+   —— 封面之后的展示页：左侧总目录（本页 8 个板块，点击直达），
+      右侧附属目录（独立子页面，已上线可点、规划中标注"筹备中"）。
+   ============================================================ */
+
+.toc-wrap {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 40px;
+  align-items: start;
+  max-width: 1120px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 目录页顶部标题区 */
+.toc-head { margin-bottom: 26px; }
+.toc-head .eyebrow { margin-bottom: 10px; }
+.toc-head h2 { font-size: 32px; line-height: 1.25; margin-bottom: 10px; }
+.toc-head p { color: var(--muted, #8A8073); font-size: 15px; max-width: 46em; }
+
+/* ---------- 左：总目录 ---------- */
+.toc-col-title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(140, 102, 71, .16);
+}
+.toc-col-title b { font-size: 15px; letter-spacing: .02em; }
+.toc-col-title span { font-size: 12px; color: var(--muted, #8A8073); letter-spacing: .04em; }
+
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+.toc-item {
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: 11px;
+  border: 1px solid transparent;
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, transform .2s;
+  width: 100%;
+  text-align: left;
+  background: none;
+  font: inherit;
+}
+.toc-item:hover {
+  background: #fff;
+  border-color: rgba(140, 102, 71, .16);
+  transform: translateX(3px);
+}
+.toc-item .toc-num {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--accent, #E0764A);
+  letter-spacing: .06em;
+}
+.toc-item .toc-body { min-width: 0; }
+.toc-item .toc-name { font-size: 15px; font-weight: 500; display: block; }
+.toc-item .toc-desc {
+  font-size: 12.5px;
+  color: var(--muted, #8A8073);
+  display: block;
+  margin-top: 1px;
+  line-height: 1.45;
+}
+.toc-item .toc-arrow {
+  font-size: 15px;
+  color: rgba(140, 102, 71, .35);
+  transition: color .2s, transform .2s;
+}
+.toc-item:hover .toc-arrow { color: var(--accent, #E0764A); transform: translateX(2px); }
+
+/* ---------- 右：附属目录（独立页面） ---------- */
+.toc-sublist { display: flex; flex-direction: column; gap: 10px; }
+.toc-sub {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, .72);
+  border: 1px solid rgba(140, 102, 71, .13);
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform .2s, box-shadow .2s, border-color .2s, background .2s;
+}
+.toc-sub.is-live:hover {
+  transform: translateY(-2px);
+  background: #fff;
+  border-color: rgba(224, 118, 74, .4);
+  box-shadow: 0 14px 30px -12px rgba(140, 102, 71, .3);
+}
+.toc-sub.is-soon { opacity: .68; cursor: default; }
+.toc-sub-icon {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: linear-gradient(140deg, #FBE7D8, #F6D8C2);
+  font-size: 16px;
+}
+.toc-sub-body { min-width: 0; flex: 1; }
+.toc-sub-body b { font-size: 14.5px; display: block; }
+.toc-sub-body small {
+  font-size: 12.5px;
+  color: var(--muted, #8A8073);
+  display: block;
+  margin-top: 2px;
+  line-height: 1.45;
+}
+.toc-badge {
+  flex-shrink: 0;
+  align-self: center;
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.toc-badge.live { background: rgba(224, 118, 74, .12); color: #C15F35; font-weight: 600; }
+.toc-badge.soon { background: rgba(140, 102, 71, .1); color: var(--muted, #8A8073); }
+
+/* 附属目录分组小标题 */
+.toc-group { margin-top: 4px; }
+.toc-group + .toc-group { margin-top: 12px; }
+.toc-group-head {
+  font-size: 11.5px;
+  letter-spacing: .1em;
+  color: rgba(140, 102, 71, .55);
+  margin: 6px 0 8px 2px;
+  text-transform: uppercase;
+}
+
+/* 目录页底部提示 */
+.toc-foot {
+  margin-top: 26px;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(140, 102, 71, .18);
+  font-size: 12.5px;
+  color: var(--muted, #8A8073);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.toc-foot kbd {
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: rgba(140, 102, 71, .1);
+  font-family: inherit;
+  font-size: 11.5px;
+}
+
+/* ---------- 窄屏 / 滚动模式下的目录页 ---------- */
+@media (max-width: 1024px) {
+  .toc-wrap { grid-template-columns: 1fr; gap: 32px; }
+  .toc-head h2 { font-size: 26px; }
+}
