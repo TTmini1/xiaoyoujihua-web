@@ -144,7 +144,7 @@
 
   function parseInput(raw) {
     var text = String(raw || '').trim();
-    var result = { title: '', dueLabel: '', dueTs: null, tags: [], priority: '' };
+    var result = { title: '', dueLabel: '', dueTs: null, tags: [], priority: '', repeat: false };
 
     // 标签：#健康
     text = text.replace(/#([^\s#!]+)/g, function (_, t) {
@@ -166,6 +166,17 @@
     var base = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     var found = false;
     var m;
+
+    // 重复规则：每/每周/每天/每月 —— 先探测，避免「每周三」被拆成「每」+「周三」
+    // 当前版本不支持自动重复，因此只做识别与提示，仍按最近一次日期记录
+    if (/每\s*(天|日|周|星期|月)|每周[一二三四五六日天]|每星期[一二三四五六日天]/.test(text)) {
+      result.repeat = true;
+      // 整块吃掉重复短语，避免残留「每」「天」「周」等碎片进入标题
+      text = text.replace(/每\s*(天|日|周|星期|月)(?![一二三四五六日天])/g, ' ');
+      text = text.replace(/每\s*(?=[一二三四五六日天])|每\s*(?=(周|星期)[一二三四五六日天])/g, ' ');
+      // 「每月N号」连日期一起吞掉，避免残留「1号」
+      text = text.replace(/每月\s*\d{1,2}\s*[日号]/g, ' ');
+    }
 
     if ((m = text.match(/(今天|今晚|今早|明天|明晚|后天|大后天)/))) {
       var offMap = { '今天': 0, '今晚': 0, '今早': 0, '明天': 1, '明晚': 1, '后天': 2, '大后天': 3 };
@@ -251,7 +262,18 @@
     if (state.tab === 'done') tasks = tasks.filter(function (t) { return t.done; });
     if (state.tab === 'star') tasks = tasks.filter(function (t) { return t.star; });
     if (state.tag) tasks = tasks.filter(function (t) { return (t.tags || []).indexOf(state.tag) !== -1; });
+
+    // 「即将到期」：只看未完成且有到期时间的，按时间由近到远排序
+    if (state.tab === 'due') {
+      tasks = tasks.filter(function (t) { return !t.done && t.dueTs; });
+      tasks.sort(function (a, b) { return a.dueTs - b.dueTs; });
+    }
     return tasks;
+  }
+
+  /* 判断任务是否已逾期：有到期时间、未完成、且时间早于现在 */
+  function isOverdue(task) {
+    return !!(task && !task.done && task.dueTs && task.dueTs < Date.now());
   }
 
   function renderProgress() {
@@ -300,7 +322,8 @@
     }).join('');
     var pri = t.priority ? '<em class="chip chip-pri-' + t.priority + '">' + PRIORITY[t.priority].label + '</em>' : '';
 
-    return '<li class="task-item' + (t.done ? ' done' : '') + '" data-id="' + t.id + '" draggable="false">' +
+    var overdue = isOverdue(t);
+    return '<li class="task-item' + (t.done ? ' done' : '') + (overdue ? ' overdue' : '') + '" data-id="' + t.id + '" draggable="false">' +
       '<span class="drag-dot" data-drag="' + t.id + '" title="拖拽排序">⠿</span>' +
       '<span class="pcheck">' + (t.done ? '✓' : '') + '</span>' +
       '<div class="task-body">' +
@@ -308,10 +331,9 @@
           ? '<input class="edit-input" data-edit="' + t.id + '" value="' + escapeHtml(t.title) + '" maxlength="80" />'
           : '<b data-title="' + t.id + '">' + escapeHtml(t.title) + '</b>') +
         '<small>' +
-          (t.done ? '已完成' : '待完成') +
+          (t.done ? '已完成' : (overdue ? '<span class="due-over">已逾期</span>' : '待完成')) +
           (t.dueLabel ? ' · 截止 ' + escapeHtml(t.dueLabel) : '') +
           ' · ' + t.timeLabel +
-          (t.synced ? ' · 已同步' : '') +
         '</small>' +
         (chips || pri ? '<div class="task-meta">' + pri + chips + '</div>' : '') +
       '</div>' +
@@ -390,14 +412,77 @@
     render();
   }
 
+  /* ---------------------------------------------------------
+     删除与撤销
+     —— 删除先做「视觉淡出」，同时把任务压入撤销栈；
+        5 秒内点「撤销」可原样恢复（含位置、标签、时间等全部字段）。
+     --------------------------------------------------------- */
+  var undoBar = document.getElementById('undoBar');
+  var undoName = document.getElementById('undoName');
+  var undoBtn = document.getElementById('undoBtn');
+  var undoClose = document.getElementById('undoClose');
+  var UNDO_MS = 5000;
+  var pendingUndo = null;      // { task, index }
+  var undoTimer = null;
+
+  function hideUndo() {
+    if (undoBar) undoBar.classList.remove('is-open');
+    if (undoTimer) { clearTimeout(undoTimer); undoTimer = null; }
+    pendingUndo = null;
+  }
+
+  function showUndo(task, index) {
+    pendingUndo = { task: task, index: index };
+    if (undoName) {
+      var label = String(task.title || '').trim();
+      if (label.length > 16) label = label.slice(0, 16) + '…';
+      undoName.textContent = label || '这条计划';
+    }
+    if (undoBar) undoBar.classList.add('is-open');
+    if (undoTimer) clearTimeout(undoTimer);
+    undoTimer = setTimeout(function () {
+      /* 超时后关闭提示条，删除即为最终结果（数据已持久化，无需额外动作） */
+      hideUndo();
+    }, UNDO_MS);
+  }
+
   function deleteTask(id) {
+    var idx = -1;
+    for (var i = 0; i < state.tasks.length; i++) {
+      if (state.tasks[i].id === id) { idx = i; break; }
+    }
+    if (idx < 0) return;
+    var snapshot = Object.assign({}, state.tasks[idx]);
+
     var item = $list.querySelector('.task-item[data-id="' + id + '"]');
     if (item) item.classList.add('removing');
+
     setTimeout(function () {
       state.tasks = state.tasks.filter(function (t) { return t.id !== id; });
       render();
+      showUndo(snapshot, idx);
     }, item ? 180 : 0);
   }
+
+  function undoDelete() {
+    if (!pendingUndo) return;
+    var task = pendingUndo.task;
+    var at = pendingUndo.index;
+    /* 放回原来的位置，尽量还原删除前的顺序 */
+    var pos = Math.max(0, Math.min(at, state.tasks.length));
+    state.tasks.splice(pos, 0, task);
+    hideUndo();
+    render();
+  }
+
+  if (undoBtn) undoBtn.addEventListener('click', undoDelete);
+  if (undoClose) undoClose.addEventListener('click', hideUndo);
+  /* 键盘快捷键：Cmd/Ctrl + Z 也能撤销 */
+  document.addEventListener('keydown', function (e) {
+    if ((e.metaKey || e.ctrlKey) && (e.key === 'z' || e.key === 'Z')) {
+      if (pendingUndo) { e.preventDefault(); undoDelete(); }
+    }
+  });
 
   function saveEdit(id, value) {
     var v = String(value || '').trim();
@@ -427,6 +512,8 @@
     if (p.dueLabel) bits.push('截止 ' + p.dueLabel);
     if (p.priority) bits.push('优先级 ' + PRIORITY[p.priority].label);
     (p.tags || []).forEach(function (t) { bits.push('#' + t); });
+    // 识别到重复规则时不支持自动重复，明确告知用户实际记录方式
+    if (p.repeat) bits.push('重复任务暂不支持，已按最近一次记录');
     if (!bits.length) { hidePreview(); return; }
     $previewText.innerHTML = '已识别：<b>' + escapeHtml(p.title || raw) + '</b>' + bits.map(function (b) {
       return '<span class="parse-chip">' + escapeHtml(b) + '</span>';
