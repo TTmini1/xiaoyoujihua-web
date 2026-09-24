@@ -11,7 +11,7 @@
    否则用户可能长期停留在旧文件上。
    ============================================================ */
 
-var CACHE_VERSION = 'xyjh-v20260924b';
+var CACHE_VERSION = 'xyjh-v20260924c';
 var CACHE_NAME = 'xyjh-static-' + CACHE_VERSION;
 
 /* 预缓存：应用外壳。任一失败不影响安装，只记录告警。 */
