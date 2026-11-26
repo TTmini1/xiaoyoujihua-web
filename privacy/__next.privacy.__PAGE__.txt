@@ -1,0 +1,49 @@
+1:"$Sreact.fragment"
+2:"/_next/static/chunks/0afdpv1l2i4cu.js"
+3:I[96276,["$2"],"CartProvider"]
+4:I[70119,["$2"],"Header"]
+5:I[35887,["$2"],"default"]
+6:"/_next/static/chunks/0gzt_70jjfiee.js"
+7:I[8821,["$2","$6"],"default"]
+8:I[72565,["$2"],"default"]
+9:"/_next/static/chunks/2d3c-w-cmax3y.js"
+a:I[33662,["$2","$9"],""]
+1c:"ViewportBoundary"
+1d:I[77408,["$2"],"$1c"]
+1e:"MetadataBoundary"
+1f:I[77408,["$2"],"$1e"]
+20:"$Sreact.suspense"
+:HL["/_next/static/chunks/43tifobk7khez.css","style"]
+:HL["https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap","style"]
+c:X
+f:X
+f:C
+10:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","main",null,{"className":"page-shell information-page","children":[["$","div",null,{"className":"page-intro","children":[["$","span",null,{"className":"eyebrow","children":"YOUR INFORMATION"}],["$","h1",null,{"children":"Privacy, thoughtfully."}],["$","p",null,{"children":"Current data handling for this independent demonstration website."}]]}],["$","section",null,{"children":[["$","h2",null,{"children":"Shopping bag"}],["$","p",null,{"children":"Your selected demonstration teas and quantities are stored in localStorage on your current browser and device. The bag is not a server-side order record and is not shared across devices. You can remove items in the bag or clear this site’s data in your browser settings. Browser-local storage may remain until you clear it."}],["$","h2",null,{"children":"Order & wholesale email drafts"}],["$","p",null,{"children":"The order enquiry and wholesale forms prepare email drafts addressed to tyminye@gmail.com using your email app. The website does not transmit form details to the owner, save them as backend orders, or send an operational notification. You must review and send the draft yourself; opening it is not a sent enquiry or a confirmed order."}],"$L11","$L12","$L13","$L14","$L15","$L16","$L17","$L18","$L19"]}]]}],null,"$L1a"]}],"p":"$@1b","v":null,"s":"$c"}}]]
+d:[["children",{"s":"privacy","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@e","v":"$f","s":"$c"},"c":"$Q10"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/43tifobk7khez.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/0afdpv1l2i4cu.js","async":true}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"children":["$","$L3",null,{"children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","error":"$7","errorStyles":[],"errorScripts":[["$","script","script-0",{"src":"/_next/static/chunks/0gzt_70jjfiee.js","async":true}]],"template":["$","$L8",null,{}],"notFound":[["$","main",null,{"className":"page-shell empty-results","children":[["$","span",null,{"className":"eyebrow","children":"404 · A PATH LESS TRAVELED"}],["$","h1",null,{"children":"This leaf has wandered."}],["$","p",null,{"children":"We couldn’t find the page you’re looking for."}],["$","$La",null,{"href":"/collections","className":"button","children":"Back to our teas"}]]}],[]]}],["$","footer",null,{"className":"site-footer","children":[["$","div",null,{"className":"footer-top","children":[["$","div",null,{"className":"footer-brand","children":[["$","a",null,{"className":"brand","href":"/","children":[["$","span",null,{"className":"brand-stamp","children":["山",["$","br",null,{}],"禾"]}],["$","span",null,{"children":[["$","span",null,{"className":"brand-name","children":"SHANHE"}],["$","span",null,{"className":"brand-subtitle","children":"CHINESE TEA"}]]}]]}],["$","p",null,{"children":["Rooted in Chinese tea traditions.",["$","br",null,{}],"Made for moments of your own."]}]]}],["$","div",null,{"children":[["$","h3",null,{"children":"Explore"}],["$","a",null,{"href":"/collections","children":"Our teas"}],["$","a",null,{"href":"/our-story","children":"Our story"}],["$","a",null,{"href":"/guide","children":"The tea ritual"}]]}],["$","div",null,{"children":[["$","h3",null,{"children":"Here to help"}],["$","a",null,{"href":"/shipping","children":"Shipping & returns"}],["$","a",null,{"href":"/faq","children":"Frequently asked questions"}],["$","a",null,{"href":"/cart","children":"Your tea bag"}]]}],["$","div",null,{"children":[["$","h3",null,{"children":"Let’s talk tea"}],["$","p",null,{"children":["For tea shops, cafés and",["$","br",null,{}],"thoughtful partnerships."]}],["$","a",null,{"href":"/wholesale","className":"footer-contact","children":["Wholesale enquiries ",["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":15,"height":15,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-arrow-up-right","children":[["$","path","1tivn9",{"d":"M7 7h10v10"}],["$","path","1vkiza",{"d":"M7 17 17 7"}],"$undefined"]}]]}]]}]]}],["$","div",null,{"className":"footer-bottom","children":[["$","span",null,{"children":["© ",2026," SHANHE Chinese Tea"]}],["$","span",null,{"children":"Demonstration storefront · Prices in HKD"}],["$","a",null,{"href":"/privacy","children":"Privacy"}]]}]]}]]}]}]]}]]}],"p":"$@b","v":null,"s":"$c"},"c":"$Qd"},"h":{"r":["$","$1","h",{"children":[null,["$","$L1d",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1f",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$20",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Privacy Information | SHANHE Chinese Tea"}],["$","meta","1",{"name":"description","content":"How this independent SHANHE demonstration site uses browser-local cart storage, email drafts, external fonts and AI-generated illustrative assets."}],["$","meta","2",{"name":"keywords","content":"Chinese tea,loose leaf tea,green tea,oolong tea,tea wholesale"}],["$","link","3",{"rel":"canonical","href":"https://100plus.top/privacy/"}],["$","meta","4",{"property":"og:title","content":"SHANHE | Chinese Tea for Your Everyday Ritual"}],["$","meta","5",{"property":"og:description","content":"Good tea. A quieter moment."}],["$","meta","6",{"property":"og:url","content":"https://100plus.top/"}],["$","meta","7",{"property":"og:site_name","content":"SHANHE Chinese Tea"}],["$","meta","8",{"property":"og:image","content":"https://100plus.top/images/tea-ritual.webp"}],["$","meta","9",{"property":"og:type","content":"website"}],["$","meta","10",{"name":"twitter:card","content":"summary_large_image"}],"$L21","$L22","$L23","$L24","$L25"]}]}],null]}],null]}],"p":"$@26","v":null,"s":"$c"}},"a":"$@27","u":"$@28","b":"gdPIa3auhqnf_ZAUGjB6s"}
+29:I[77408,["$2"],"OutletBoundary"]
+2b:I[45959,["$2"],"IconMark"]
+11:["$","p",null,{"children":"Once you send an email, its contents and your email address are handled by your email provider and the recipient’s email provider. Your email app may save drafts under its own settings. Only include information needed for your enquiry. Do not send payment-card details, passwords or sensitive identity documents."}]
+12:["$","h2",null,{"children":"Payments & accounts"}]
+13:["$","p",null,{"children":"This website does not provide customer accounts, an online payment service or a backend order system. It does not collect card details. Demonstration item prices are not a final purchase quote."}]
+14:["$","h2",null,{"children":"External fonts & hosting"}]
+15:["$","p",null,{"children":"The site uses Google Fonts. Loading these fonts can make requests to Google’s external font services, which may receive technical information such as your IP address, browser information and the requested font resource. Those services have their own privacy terms. The website host may also process ordinary request information when serving these static pages; this browser-local cart is separate from hosting activity."}]
+16:["$","h2",null,{"children":"Illustrative images & product information"}]
+17:["$","p",null,{"children":"AI-generated tea and landscape assets are used for illustration. They are not photographs verifying actual stock, sourcing, an owned tea garden or a supplier relationship. The two demonstration teas and their details must be confirmed before any real sale."}]
+18:["$","h2",null,{"children":"Before commercial launch"}]
+19:["$","p",null,{"children":["SHANHE is a proposed brand. The owner’s business and legal identity, applicable sales markets, data retention terms, customer rights and final privacy and sales policies remain pending. These must be established before real selling begins. For a question about this website or information you have emailed, write to ",["$","a",null,{"href":"mailto:tyminye@gmail.com","children":"tyminye@gmail.com"}],"."]}]
+1a:["$","$L29",null,{"children":["$","$20",null,{"name":"Next.MetadataOutlet","children":"$@2a"}]}]
+21:["$","meta","11",{"name":"twitter:title","content":"SHANHE Chinese Tea"}]
+22:["$","meta","12",{"name":"twitter:description","content":"Good tea. A quieter moment."}]
+23:["$","meta","13",{"name":"twitter:image","content":"https://100plus.top/images/tea-ritual.webp"}]
+24:["$","link","14",{"rel":"icon","href":"/favicon.svg"}]
+25:["$","$L2b","15",{}]
+c:300
+2a:null
+28:true
+c:C
+27:0
+e:"$undefined"
+b:"$undefined"
+26:"$undefined"
+1b:"$undefined"

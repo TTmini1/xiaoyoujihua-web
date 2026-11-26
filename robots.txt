@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /test/
-
+Disallow: /cart/
+Disallow: /search/
 Sitemap: https://100plus.top/sitemap.xml

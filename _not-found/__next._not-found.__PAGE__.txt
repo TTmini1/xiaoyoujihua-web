@@ -1,0 +1,39 @@
+1:"$Sreact.fragment"
+2:"/_next/static/chunks/0afdpv1l2i4cu.js"
+3:I[96276,["$2"],"CartProvider"]
+4:I[70119,["$2"],"Header"]
+5:I[35887,["$2"],"default"]
+6:"/_next/static/chunks/0gzt_70jjfiee.js"
+7:I[8821,["$2","$6"],"default"]
+8:I[72565,["$2"],"default"]
+9:"/_next/static/chunks/2d3c-w-cmax3y.js"
+a:I[33662,["$2","$9"],""]
+11:I[77408,["$2"],"OutletBoundary"]
+12:"$Sreact.suspense"
+15:"ViewportBoundary"
+16:I[77408,["$2"],"$15"]
+17:"MetadataBoundary"
+18:I[77408,["$2"],"$17"]
+:HL["/_next/static/chunks/43tifobk7khez.css","style"]
+:HL["https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap","style"]
+c:X
+f:X
+f:C
+10:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","main",null,{"className":"page-shell empty-results","children":[["$","span",null,{"className":"eyebrow","children":"404 · A PATH LESS TRAVELED"}],["$","h1",null,{"children":"This leaf has wandered."}],["$","p",null,{"children":"We couldn’t find the page you’re looking for."}],["$","$La",null,{"href":"/collections","className":"button","children":"Back to our teas"}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/2d3c-w-cmax3y.js","async":true}]],["$","$L11",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","children":"$@13"}]}]]}],"p":"$@14","v":null,"s":"$c"}}]]
+d:[["children",{"s":"/_not-found","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@e","v":"$f","s":"$c"},"c":"$Q10"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/43tifobk7khez.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/0afdpv1l2i4cu.js","async":true}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"children":["$","$L3",null,{"children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","error":"$7","errorStyles":[],"errorScripts":[["$","script","script-0",{"src":"/_next/static/chunks/0gzt_70jjfiee.js","async":true}]],"template":["$","$L8",null,{}],"notFound":[["$","main",null,{"className":"page-shell empty-results","children":[["$","span",null,{"className":"eyebrow","children":"404 · A PATH LESS TRAVELED"}],["$","h1",null,{"children":"This leaf has wandered."}],["$","p",null,{"children":"We couldn’t find the page you’re looking for."}],["$","$La",null,{"href":"/collections","className":"button","children":"Back to our teas"}]]}],[]]}],["$","footer",null,{"className":"site-footer","children":[["$","div",null,{"className":"footer-top","children":[["$","div",null,{"className":"footer-brand","children":[["$","a",null,{"className":"brand","href":"/","children":[["$","span",null,{"className":"brand-stamp","children":["山",["$","br",null,{}],"禾"]}],["$","span",null,{"children":[["$","span",null,{"className":"brand-name","children":"SHANHE"}],["$","span",null,{"className":"brand-subtitle","children":"CHINESE TEA"}]]}]]}],["$","p",null,{"children":["Rooted in Chinese tea traditions.",["$","br",null,{}],"Made for moments of your own."]}]]}],["$","div",null,{"children":[["$","h3",null,{"children":"Explore"}],["$","a",null,{"href":"/collections","children":"Our teas"}],["$","a",null,{"href":"/our-story","children":"Our story"}],["$","a",null,{"href":"/guide","children":"The tea ritual"}]]}],["$","div",null,{"children":[["$","h3",null,{"children":"Here to help"}],["$","a",null,{"href":"/shipping","children":"Shipping & returns"}],["$","a",null,{"href":"/faq","children":"Frequently asked questions"}],["$","a",null,{"href":"/cart","children":"Your tea bag"}]]}],["$","div",null,{"children":[["$","h3",null,{"children":"Let’s talk tea"}],["$","p",null,{"children":["For tea shops, cafés and",["$","br",null,{}],"thoughtful partnerships."]}],["$","a",null,{"href":"/wholesale","className":"footer-contact","children":["Wholesale enquiries ",["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":15,"height":15,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-arrow-up-right","children":[["$","path","1tivn9",{"d":"M7 7h10v10"}],["$","path","1vkiza",{"d":"M7 17 17 7"}],"$undefined"]}]]}]]}]]}],["$","div",null,{"className":"footer-bottom","children":[["$","span",null,{"children":["© ",2026," SHANHE Chinese Tea"]}],["$","span",null,{"children":"Demonstration storefront · Prices in HKD"}],["$","a",null,{"href":"/privacy","children":"Privacy"}]]}]]}]]}]}]]}]]}],"p":"$@b","v":null,"s":"$c"},"c":"$Qd"},"h":{"r":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$12",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Page Not Found | SHANHE Chinese Tea"}],["$","meta","1",{"name":"description","content":"This page could not be found. Return to the SHANHE demonstration tea collection."}],["$","meta","2",{"name":"keywords","content":"Chinese tea,loose leaf tea,green tea,oolong tea,tea wholesale"}],["$","meta","3",{"name":"robots","content":"noindex, follow"}],["$","link","4",{"rel":"canonical","href":"https://100plus.top/404.html"}],["$","meta","5",{"property":"og:title","content":"SHANHE | Chinese Tea for Your Everyday Ritual"}],["$","meta","6",{"property":"og:description","content":"Good tea. A quieter moment."}],["$","meta","7",{"property":"og:url","content":"https://100plus.top/"}],["$","meta","8",{"property":"og:site_name","content":"SHANHE Chinese Tea"}],["$","meta","9",{"property":"og:image","content":"https://100plus.top/images/tea-ritual.webp"}],["$","meta","10",{"property":"og:type","content":"website"}],["$","meta","11",{"name":"twitter:card","content":"summary_large_image"}],"$L19","$L1a","$L1b","$L1c","$L1d"]}]}],null]}],null]}],"p":"$@1e","v":null,"s":"$c"}},"a":"$@1f","u":"$@20","b":"gdPIa3auhqnf_ZAUGjB6s"}
+21:I[45959,["$2"],"IconMark"]
+13:null
+19:["$","meta","12",{"name":"twitter:title","content":"SHANHE Chinese Tea"}]
+1a:["$","meta","13",{"name":"twitter:description","content":"Good tea. A quieter moment."}]
+1b:["$","meta","14",{"name":"twitter:image","content":"https://100plus.top/images/tea-ritual.webp"}]
+1c:["$","link","15",{"rel":"icon","href":"/favicon.svg"}]
+1d:["$","$L21","16",{}]
+c:300
+20:true
+c:C
+1f:0
+e:"$undefined"
+b:"$undefined"
+1e:"$undefined"
+14:"$undefined"
