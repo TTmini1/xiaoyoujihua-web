@@ -1,5 +1,5 @@
-:HL["/_next/static/chunks/43tifobk7khez.css","style"]
+:HL["/_next/static/chunks/1elw4_8-jija5.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap","style"]
 :HL["/images/tea-ritual.webp","image",{"fetchPriority":"high"}]
 1:[["children",{"s":"__PAGE__","h":160}]]
-0:{"b":"gdPIa3auhqnf_ZAUGjB6s","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"LfrX6VronA9GzNY-MD2hG","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
